@@ -1,0 +1,63 @@
+[
+  {
+    "event": "do_arrival",
+    "rules": [
+      {
+        "condition": "present",
+        "devices": [
+          "craigs_phone",
+          "kylies_phone"
+        ],
+        "selection": "any"
+      }
+    ]
+  },
+  {
+    "event": "start_departure",
+    "rules": [
+      {
+        "selection": "all",
+        "devices": [
+          "craigs_phone",
+          "kylies_phone"
+        ],
+        "modifier": "not",
+        "condition": "present"
+      },
+      {
+        "join": "and"
+      },
+      {
+        "continuously": 30
+      }
+    ]
+  },
+  {
+    "event": "dim_lights",
+    "rules": [
+      {
+        "condition": "active",
+        "devices": [
+          "lounge_tv"
+        ],
+        "selection": "any"
+      },
+      {
+        "join": "and"
+      },
+      {
+        "tod_begin": 300,
+        "tod_end": 1800
+      },
+      {
+        "join": "or"
+      },
+      {
+        "days_of_week": [
+          "sat",
+          "sun"
+        ]
+      }
+    ]
+  }
+]

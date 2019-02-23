@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Homer rules schema",
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "description": "the action to be performed if rules are satisfied",
+        "type": "string"
+      },
+      "rules": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "required": ["action"]
+  },
+  "title": "HomerRulesSchema",
+  "type": "array"
+}
