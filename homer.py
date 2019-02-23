@@ -243,33 +243,18 @@ class Hue(Light):
 # =============================================================================
 
 
-# TODO: load this info from config file
-DEVICE_MANIFEST = dict(
-    amplifier          = dict(address="192.168.1.240", room="lounge",  type="Feibit"),
-    craig_mobile       = dict(address="192.168.1.230",                 type="mobile"),
-    bedroom_lamp_leftr = dict(address="hue:01",        room="lounge",  type="Hue"),
-    bedroom_lamp_right = dict(address="hue:02",        room="lounge",  type="Hue"),
-    chargers           = dict(address="192.168.1.243", room="library", type="Wemo"),
-    kylie_mobile       = dict(address="192.168.1.231",                 type="mobile"),
-    lounge_lamp_leftr  = dict(address="hue:03",        room="lounge",  type="Hue"),
-    lounge_lamp_right  = dict(address="hue:04",        room="lounge",  type="Hue"),
-    lounge_tv          = dict(address="192.168.1.243", room="lounge",  type="SamsungTV"),
-    office_stereo      = dict(address="192.168.1.241", room="office",  type="Feibit"),
-    sub_woofer         = dict(address="192.168.1.242", room="office",  type="Wemo"),
-)
-
-
-# =============================================================================
-
-
 class Manifest(object):
-    def __init__(self, device_manifest, managed_devices, notifier):
-        self._device_manifest = device_manifest
+    def __init__(self, manifest_filename, managed_devices, notifier):
+        the_file = open(manifest_filename, "r")
+        json_str = the_file.read()
+        the_file.close()
+        self._device_manifest = json.loads(json_str)
+        self._device_manifest = manifest_filename
         self._notifier = notifier
         self._managed_devices = {}
         for name in managed_devices:
-            if name in device_manifest:
-                info = device_manifest[name]
+            if name in manifest_filename:
+                info = manifest_filename[name]
                 tgt_class = info["type"]
                 try:
                     constructor = globals()[tgt_class]
@@ -404,7 +389,8 @@ if __name__ == "__main__":
     notifier = Notifier(args)
     config = HomerConfig(CONFIG_FILENAME)
     managed_devices = config.devices_details()["managed_devices"]
-    manifest = Manifest(DEVICE_MANIFEST, managed_devices, notifier)
+    manifest_filename = config.general_details()["manifest_filename"]
+    manifest = Manifest(manifest_filename, managed_devices, notifier)
     monitored_devices = config.devices_details()["monitored_devices"]
     # noinspection PyTypeChecker
     surveyor = Surveyor(args, manifest, monitored_devices, 15, notifier)

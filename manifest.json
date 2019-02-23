@@ -1,0 +1,55 @@
+{
+  "amplifier": {
+    "address": "192.168.1.230",
+    "room": "lounge",
+    "type": "feibit"
+  },
+  "bedroom_lamp_left": {
+    "address": "192.168.1.231",
+    "room": "bedroom",
+    "type": "hue"
+  },
+  "bedroom_lamp_right": {
+    "address": "192.168.1.232",
+    "room": "bedroom",
+    "type": "hue"
+  },
+  "chargers": {
+    "address": "192.168.1.233",
+    "room": "library",
+    "type": "wemo"
+  },
+  "craig_mobile": {
+    "address": "192.168.1.234",
+    "type": "mobile"
+  },
+  "kylie_mobile": {
+    "address": "192.168.1.235",
+    "type": "mobile"
+  },
+  "lounge_lamp_left": {
+    "address": "192.168.1.236",
+    "room": "lounge",
+    "type": "hue"
+  },
+  "lounge_lamp_right": {
+    "address": "192.168.1.237",
+    "room": "lounge",
+    "type": "hue"
+  },
+  "lounge_tv": {
+    "address": "192.168.1.238",
+    "room": "lounge",
+    "type": "samsungtv"
+  },
+  "office_stereo": {
+    "address": "192.168.1.239",
+    "room": "office",
+    "type": "feibit"
+  },
+  "sub_woofer": {
+    "address": "192.168.1.240",
+    "room": "office",
+    "type": "wemo"
+  }
+}

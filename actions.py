@@ -11,7 +11,7 @@ www.delaneymorgan.com.au
 import time
 
 
-def do_arrivals(self, manifest):
+def do_arrivals(manifest):
     ACTIVE_ON_OCCUPIED = [
         "amplifier",
         "chargers",
@@ -25,7 +25,7 @@ def do_arrivals(self, manifest):
     return
 
 
-def do_departures(self, manifest):
+def do_departures(manifest):
     DEACTIVATE_ON_DEPARTURE = [
         "amplifier",
         "chargers",
