@@ -4,8 +4,8 @@
 """
 Periodic module
 
-© Power Technology Engineered Solutions Australia 2016-2017
-www.power-tec.com.au
+© Delaney & Morgan Computing 2019
+www.delaneymorgan.com.au
 """
 
 import math

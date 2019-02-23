@@ -1,3 +1,13 @@
+#!/usr/bin/python
+# coding=utf-8
+
+"""
+Actions - user defined actions
+
+© Delaney & Morgan Computing 2019
+www.delaneymorgan.com.au
+"""
+
 import time
 
 

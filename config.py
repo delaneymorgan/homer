@@ -2,6 +2,9 @@
 Homer Configuration Parser
 
 Loads configuration from config.ini and produces a configuration dictionary.
+
+© Delaney & Morgan Computing 2019
+www.delaneymorgan.com.au
 """
 
 

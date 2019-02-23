@@ -1,6 +1,13 @@
 #!/usr/bin/python
 # coding=utf-8
 
+"""
+Homer - Home control application
+
+© Delaney & Morgan Computing 2019
+www.delaneymorgan.com.au
+"""
+
 
 import argparse
 import json
